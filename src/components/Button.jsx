@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const setDynamicBackground = (type) => {
+const setDynamicStyles = (type) => {
   switch (type) {
     case "primary":
       return {
@@ -38,8 +38,8 @@ const setDynamicBackground = (type) => {
 };
 
 const Btn = styled.button`
-  background-color: ${(props) => setDynamicBackground(props.type).background};
-  color: ${(props) => setDynamicBackground(props.type).color};
+  background-color: ${(props) => setDynamicStyles(props.type).background};
+  color: ${(props) => setDynamicStyles(props.type).color};
   padding: 1rem;
   border-radius: 0.25rem;
   border: none;
