@@ -20,8 +20,8 @@ const setDynamicBackground = (type) => {
       };
     case "success":
       return {
-        background: "#F22007",
-        color: "#FFFFFF",
+        background: "#0DFC74",
+        color: "#363432",
       };
     case "danger":
       return {

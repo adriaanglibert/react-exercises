@@ -55,11 +55,6 @@ const Actions = styled.div`
 
 const defaultButtons = [
   {
-    type: "danger",
-    label: "Delete",
-    action: "close",
-  },
-  {
     type: "secondary",
     label: "Cancel",
     action: "close",
