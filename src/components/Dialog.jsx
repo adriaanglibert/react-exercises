@@ -1,6 +1,7 @@
+import React, { useEffect } from "react";
+
 import Button from "./Button";
 import { IoMdClose } from "react-icons/io";
-import React from "react";
 import styled from "styled-components";
 
 const Overlay = styled.div`
@@ -78,6 +79,22 @@ const Dialog = ({
         break;
     }
   };
+
+  const handleKeyPress  = (e) => {
+    if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+  }
+
+  useEffect(() => {
+    if (open) {
+      window.addEventListener('keydown', handleKeyPress);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    }
+  }, [open])
 
   if (open) {
     return (
