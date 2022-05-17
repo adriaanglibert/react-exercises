@@ -1,8 +1,11 @@
+import Container from '../components/Container'
 import React from 'react'
 
 const Dropdown = () => {
   return (
-    <div>Dropdown</div>
+    <Container>
+        <h1>Oefening Dropdown</h1>
+    </Container>
   )
 }
 

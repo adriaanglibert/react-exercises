@@ -1,16 +1,17 @@
 import React from "react";
+import { adjustColor } from '../helper';
 import styled from "styled-components";
 
 const setDynamicStyles = (type) => {
   switch (type) {
     case "primary":
       return {
-        background: "#EF6024",
+        background: "#1446A0",
         color: "#FFFFFF",
       };
     case "secondary":
       return {
-        background: "#F0941F",
+        background: "#F5D547",
         color: "#000000",
       };
     case "tertiary":
@@ -20,18 +21,18 @@ const setDynamicStyles = (type) => {
       };
     case "success":
       return {
-        background: "#0DFC74",
+        background: "#EBEBD3",
         color: "#363432",
       };
     case "danger":
       return {
-        background: "#F22007",
+        background: "#DB3069",
         color: "#FFFFFF",
       };
 
     default:
       return {
-        background: "#363432",
+        background: "#3C3C3B",
         color: "#FFFFFF",
       };
   }
@@ -40,10 +41,17 @@ const setDynamicStyles = (type) => {
 const Btn = styled.button`
   background-color: ${(props) => setDynamicStyles(props.type).background};
   color: ${(props) => setDynamicStyles(props.type).color};
-  padding: 1rem;
-  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
   border: none;
   cursor: pointer;
+  font-family: 'Metropolis';
+  font-weight: 400;
+  transition: background-color .25s linear;
+
+  &:hover {
+    background-color: ${(props) => adjustColor(setDynamicStyles(props.type).background, -25)};
+  }
 `;
 
 const Button = ({ children, type, onClick }) => {

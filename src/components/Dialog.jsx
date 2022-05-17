@@ -41,6 +41,7 @@ const Close = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 0.25s linear;
+  cursor: pointer;
 
   &:hover {
     background-color: #f22007;
@@ -49,9 +50,10 @@ const Close = styled.button`
 `;
 
 const Actions = styled.div`
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   gap: 1rem;
+  margin: 0 .5rem;
 `;
 
 const defaultButtons = [
@@ -80,21 +82,21 @@ const Dialog = ({
     }
   };
 
-  const handleKeyPress  = (e) => {
-    if (e.key === 'Escape') {
-        setIsOpen(false);
-      }
-  }
+  const handleKeyPress = (e) => {
+    if (e.key === "Escape") {
+      setIsOpen(false);
+    }
+  };
 
   useEffect(() => {
     if (open) {
-      window.addEventListener('keydown', handleKeyPress);
+      window.addEventListener("keydown", handleKeyPress);
     }
 
     return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    }
-  }, [open])
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [open]);
 
   if (open) {
     return (
@@ -106,17 +108,19 @@ const Dialog = ({
 
           {children}
 
-          <Actions>
-            {buttons.map((button, i) => (
-              <Button
-                key={`button-${i}`}
-                type={button.type}
-                onClick={() => handleClick(button.action)}
-              >
-                {button.label}
-              </Button>
-            ))}
-          </Actions>
+          {buttons && (
+            <Actions>
+              {buttons.map((button, i) => (
+                <Button
+                  key={`button-${i}`}
+                  type={button.type}
+                  onClick={() => handleClick(button.action)}
+                >
+                  {button.label}
+                </Button>
+              ))}
+            </Actions>
+          )}
         </Inner>
       </Overlay>
     );

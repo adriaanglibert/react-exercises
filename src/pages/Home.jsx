@@ -1,8 +1,21 @@
+import Container from '../components/Container';
+import { Link } from 'react-router-dom'
+import ROUTES from '../routes';
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <h1>Oefeningen React</h1>
+
+      <ul>
+        <li>
+          <Link to={ROUTES.MODAL}>
+            Modal
+          </Link>
+        </li>
+      </ul>
+    </>
   )
 }
 
