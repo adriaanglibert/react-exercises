@@ -49,6 +49,7 @@ const BaseLayout = () => {
           </NavLink>
         ))}
       </Nav>
+
       <Container>
         <Outlet />
       </Container>
