@@ -3,7 +3,7 @@ import React from "react";
 import useDropdown from '../hooks/useDropdown';
 
 const courses = [
-  { label: "IVM", value: "ivm" },
+  { label: "IVM", value: "ivm", href: "https://arteveldehogeschool.instructure.com/" },
   { label: "At work", value: "work" },
   { label: "IT Communication", value: "it" },
   { label: "UI Prototyping", value: "ui" },

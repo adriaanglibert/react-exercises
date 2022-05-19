@@ -36,6 +36,7 @@ const List = styled.ul`
   transition: all 0.75s ease;
   height: 100%;
   max-height: 0;
+  max-width: 200px;
 `;
 
 const HiddenLabel = styled.label`
@@ -90,12 +91,18 @@ const Dropdown = ({ name = label, label, value, options, onChange }) => {
       >
         {options.map((option) => (
           <li key={option.value}>
-            <Item
-              tabIndex={isOpen ? 0 : -1}
-              onClick={() => handleSelect(option)}
-            >
-              {option.label}
-            </Item>
+            {
+              option.href ?
+              <Item as="a" href={option.href} tabIndex={isOpen ? 0 : -1}>
+                   {option.label}
+              </Item> :
+              <Item
+                tabIndex={isOpen ? 0 : -1}
+                onClick={() => handleSelect(option)}
+              >
+                {option.label}
+              </Item>
+            }
           </li>
         ))}
       </List>
