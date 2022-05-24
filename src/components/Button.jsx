@@ -1,4 +1,5 @@
-import React from "react";
+import React, { forwardRef, useRef } from "react";
+
 import { adjustColor } from '../helper';
 import styled from "styled-components";
 
@@ -54,12 +55,13 @@ const Btn = styled.button`
   }
 `;
 
-const Button = ({ children, type, onClick }) => {
+const Button = forwardRef(({ children, type, onClick }, ref) => {
+
   return (
-    <Btn onClick={onClick} type={type}>
+    <Btn ref={ref} onClick={onClick} type={type}>
       {children}
     </Btn>
   );
-};
+});;
 
 export default Button;

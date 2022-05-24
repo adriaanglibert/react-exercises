@@ -2,6 +2,8 @@ import { DropdownPage, Home, ModalPage, NotFound } from './pages'
 import { Route, Routes } from 'react-router-dom'
 
 import BaseLayout from './layouts/BaseLayout';
+import Cannabis from './pages/Cannabis';
+import DrugPage from './pages/DrugPage';
 import GridLayout from './layouts/SidebarLayout';
 import PostPage from './pages/PostPage';
 import ROUTES from './routes';
@@ -15,6 +17,10 @@ const App = () => {
             <Route index element={<Home/>} />
             <Route path={ROUTES.POST} element={<PostPage/>} />
           </Route>
+          <Route path={ROUTES.DRUGS}>
+            <Route index element={<Cannabis/>} />
+            <Route path={ROUTES.DRUG} element={<DrugPage/>} />
+          </Route>x
           <Route path={ROUTES.MODAL} element={<ModalPage/>} />
           <Route path={ROUTES.DROPDOWN} element={<DropdownPage/>} />
         </Route>

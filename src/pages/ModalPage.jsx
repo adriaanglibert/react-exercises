@@ -56,7 +56,7 @@ const ModalPage = () => {
           <Button
             type="success"
             onClick={() =>
-              handleOpen(<SaveContent handleClick={() => setIsOpen(false)} />)
+              handleOpen('<SaveContent handleClick={() => setIsOpen(false)} />')
             }
           >
             Save

@@ -83,6 +83,7 @@ const Dialog = ({
   };
 
   const handleKeyPress = (e) => {
+    console.log('Mashing keys');
     if (e.key === "Escape") {
       setIsOpen(false);
     }

@@ -4,7 +4,10 @@ import { API_POST_URL } from "../api";
 import Container from "../components/Container";
 import { Link } from "react-router-dom";
 import List from "../components/List";
+import {ReactComponent as Logo} from '../assets/images/logo.svg';
 import ROUTES from "../routes";
+import dog from '../assets/images/dog.jpeg';
+import logo from '../assets/images/logo.svg'
 import useFetch from "../hooks/useFetch";
 
 const Home = () => {
@@ -15,6 +18,9 @@ const Home = () => {
 
   return (
     <>
+      <Logo/>
+      <img src={logo} />
+      <img src={dog} />
       {postLoading && <p>Loading...</p>}
       {postError && <p>Something went wrong...</p>}
       {posts && (
